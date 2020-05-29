@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <title>Belajar Javascript</title>
+          
+          <!-- <script src="main.js"></script>  --> <!-- jika ingin mengambil file javascript yang terpisah/external -->
+
+          <style>
+               #abc{
+                    background: black;
+                    color: white;
+                    font-size: 25px;
+               }
+          </style>
+
+     </head>
+     <body>
+          
+          <img src="img/supreme.jpg" alt="" class="src">
+          <div id="abc"></div>
+         
+          <!-- script javascript lebih baik ditaruh dibagian akhir di dalam body -->
+          <script>
+
+               
+               //Deklarasi variable
+               var x = 1234567;
+               var nama = "text " + "saja ";
+               var nama2 = "tulisan";
+               var angka = 999 + 1;
+               var angka2 = 1000.123 + 0.2;
+               var angka3 = 20;
+               var angka4 = 10;
+               var angka5 = 30;
+               var angka_baru = angka + 2;
+               var kata = nama + "ya";
+               nama2 = "tulisan baru" //jika ingin mengubah isi dari variabel tidak perlu menuliskan var lagi
+               angka3 = angka3 + angka; //operator aritmatika
+               angka3 += angka; //sama aja artinya dengan yang diatasnya
+               var angka_jml = angka + angka3;
+               angka_jml++; // menambahkan 1 / increment
+               var angka_krg = angka - angka3;
+               angka_krg--; // mengurangi 1 / decrement
+               var angka_kli = angka * angka3;
+               var angka_bgi = angka / angka3;
+               var angka_mod = angka % angka3; //modulo, sisa habis bagi
+               
+
+               //metode number
+               var angka_br = angka.toFixed(2); //penambahan koma 2
+               var angka_br2 = angka.toString(); //mengubah angka menjadi text
+               var angka = Math.random(); //mengacak angka, hanya menghasilkan angka dari 0 sampai 1
+               var angka = Math.random().toFixed(2); //menggabungkan dua metode
+               var angka_min = Math.min(angka4, angka5); //mengambil angka terkecil
+               var angka_max = Math.max(angka4, angka5); //mengambil angka terbesar
+               var angka_round = Math.round(240.654); // pembulatan
+               var angka_ceil = Math.ceil(240.234); //membulatkan keatas
+               var angka_floor = Math.floor(240.765); //membulatkan kebawah
+
+               var x = 10 //range/jarak
+               var y = 5; //batas minimal
+               //batas maksimalnya adalah x+y
+               var angka_random = Math.floor(Math.random() * x) + y; //angka 2 adalah batas minimal randomnya 2
+
+
+               //metode string
+               var namaa = "david surjana ellijas";
+
+               var length = namaa.length; //menentukan jumlah huruf
+               var indexof = namaa.indexOf("a"); //menentukan huruf yang dipilih di kata pertama muncul diurutan keberapa, urutan dimulai dari 0
+               var lastindexof = namaa.lastIndexOf("a"); //di kata terakhir muncul diurutan keberapa, spasi juga termasuk
+               var cari = namaa.search("jana");
+               var charat = namaa.charAt(4); //urutan ke 4 itu huruf apa
+               var kecil = namaa.toLowerCase(); //mengubah jadi huruf kecil smua
+               var besar = namaa.toUpperCase(); //mengubah jadi huruf besar smua
+               var ubah = namaa.replace("david", "dav"); //mengubah isi di dalam variable
+               var ambilhuruf = namaa.substring(1, 4); //mengambil huruf tertentu, mulai dari mana dan berakhir dimana
+               var ambilpanjang = namaa.substr(1, 7); //mengambil huruf tertentu, mulai dari mana dan berapa panjang yang ingin diambil
+
+               var nam = "120.50";
+               var hsl = parseInt(nam) + 10; //mengubah text menjadi angka, dibulatkan tanpa koma
+               var hsl1 = parseFloat(nam); //mengubah text menjadi angka dan bisa ada komanya
+
+
+               //fungsi
+               function print() {
+                    alert("selamat datang");
+                    var t = hsl1
+                    document.getElementById("abc").innerHTML = t; //getElementById untuk memilih id, innerHTML untuk nulis konten
+               }
+               print(); //memanggil fungsi
+
+               //parameter pada fungsi
+               function print(name){
+                    var txt = name + " yang baru";
+                    document.getElementById("abc").innerHTML = txt;
+               }
+               var namee = "latihan ";
+               print(namee + "123");
+
+               //dobel parameter pada fungsi
+               function print(name, name2){
+                    var txt = name + name2 + " yang baru";
+                    document.getElementById("abc").innerHTML = txt;
+               }
+               print("latihan ", "javascript");
+
+               //return, untuk kasih balik / mengembalikan nilai
+               function jumlah(a1, a2){
+                    return a1 + a2;
+               }
+               var text = jumlah (20, 20);
+               document.getElementById("abc").innerHTML = text;
+
+
+               //tipe data array
+               var ktk = ["budi ", "dav ", 15, "jaki "]; //dimulai dari angka 0, jd budi urutan ke 0 bukan 1
+               ktk[2] = "ida";
+               var tex = "Nama saya: " + ktk[2];
+               document.getElementById("abc").innerHTML = tex;
+               
+               //sortir array
+               var ktk = ["budi ", "dav ", "jane", "jaki "];
+               document.getElementById("abc").innerHTML = ktk.sort(); //urutkan dari abjad pertama
+               document.getElementById("abc").innerHTML = ktk.reverse(); //dari terakhir
+
+               //concat untuk menggabungkan array
+               var ktk = ["budi", " dav", " jane", " jaki"];
+               var ktk2 = [" andy", " james"];
+               var ktk3 = [" lidya", " hari"];
+               var total = ktk.concat(ktk2, ktk3);
+               document.getElementById("abc").innerHTML = total;
+               document.getElementById("abc").innerHTML = total.length; //length untuk jumlah data di dlm array
+               document.getElementById("abc").innerHTML = total.join("|"); //untuk misahin per data, mengganti koma
+
+               //menambahan, menghapus, mengganti, mengambil
+               var ktk = ["budi", " dav", " jane", " jaki"];
+               ktk.splice(2, 0, " keke", " yola"); //(dataKeBerapa, yangDihapus, yangDitambahkan, penambahanData)
+               document.getElementById("abc").innerHTML = ktk;
+
+               var ktk = ["budi", " dav", " jane", " jaki"];
+               ktk.pop(); //untuk menghapus data terakhir
+               ktk.push(" luisa"); //mengganti data terakhir
+               document.getElementById("abc").innerHTML = ktk;
+
+               var ktk = ["budi", " dav", " jane", " jaki"];
+               var a = ktk.pop(); //kalo dimasukkan ke dlm variable, fungsi pop untuk mengambil data terakhir
+               document.getElementById("abc").innerHTML = a;
+
+               var ktk = ["budi", " dav", " jane", " jaki"];
+               ktk.shift(); //untuk menghapus data pertama
+               ktk.unshift(" luisa"); //mengganti data pertama
+               document.getElementById("abc").innerHTML = ktk;
+
+               var ktk = ["budi", " dav", " jane", " jaki"];
+               var a = ktk.shift(); //kalo dimasukkan ke dlm variable, fungsi shift untuk mengambil data pertama
+               document.getElementById("abc").innerHTML = a;
+
+               
+               // //if dan else
+               // // == sama dengan
+               // // != tidak sama dengan
+               // // <  lebih kecil
+               // // <= lebih kecil sama dengan
+               // // >  lebih besar
+               // // >= lebih besar sama dengan  
+               // // && dua syarat harus terpenuhi
+               // // || cukup salah satu syarat terpenuhi
+               // var uang = 3000;
+               // var barang = 5000;
+               // if(uang == barang){
+               //      document.getElementById("abc").innerHTML = "Transaksi selesai";
+               // }else{
+               //      alert('Uang anda kurang!');
+               // }
+
+               // var barang = 8000;
+               // var teknisi = 5000;
+               // var supir = 9000;
+               // if(teknisi == barang){
+               //      alert('Uang teknisi tidak cukup, pembelian batal');
+               // }else if(supir == barang){
+               //      alert('Uang supir cukup, pembelian berhasil!');
+               // }else if(supir > barang){
+               //      alert('Uang supir kelebihan, pembelian berhasil!');
+               // }else{
+               //      alert('Uang tidak ada yang cukup!');
+               // }
+
+               // //nested if / if di dalam if
+               // var barang = 8000;
+               // var teknisi = 5000;
+               // var supir = 17000;
+               // if(supir > barang){
+               //      if(supir > barang*2) {
+               //           alert('Supir bisa beli 2 barang');
+               //      }else{
+               //           alert('Supir bisa beli 1 barang');
+               //      }
+               // }
+
+
+               // //switch case
+               // var nama = "david";
+               // switch(nama){
+               //      case "jony":
+               //           alert('Namanya adalah jony');
+               //           break;
+
+               //      case "david":
+               //           alert('Namanya adalah david');
+               //           break;
+                    
+               //      case "jono":
+               //           alert('Namanya adalah jono');
+               //           break;
+                    
+               //      default:
+               //           alert('Tidak ada namanya');
+               // }
+
+
+               // //for loop
+               // //for(mulaiDari; sampaiBerapa; perpindahanBerapaBanyak){}
+               // for(var i=0; i<6; i++){
+               //      alert(i);
+               // }
+
+
+               // //while loop, untuk mengeksekusi jika syarat di dalam kurung while terpenuhi
+               // var i = 0;
+               // var txt = "";
+               // while(i < 5){
+               //      txt += "<br>angkanya adalah " + i;
+               //      i++;
+               // }
+               //      document.getElementById("abc").innerHTML = txt;
+
+               //do while, minimal mengeksekusi 1 kali dahulu di bagian do, baru mengecek syarat di dalam kurung while terpenuhi tidak
+               var i = 5;
+               var txt = "";
+               do{
+                    txt += "<br>angkanya adalah " + i;
+                    i++;
+               }
+               while(i < 5)
+               document.getElementById("abc").innerHTML = txt;
+
+
+          </script>
+
+     </body>
+</html>
